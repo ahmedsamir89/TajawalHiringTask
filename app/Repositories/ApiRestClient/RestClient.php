@@ -6,8 +6,8 @@ namespace App\Repositories\ApiRestClient;
 interface RestClient
 {
     /**
-     * @return string
+     * @return array
      */
-    public function getData() : string ;
+    public function getData() : array ;
 
 }

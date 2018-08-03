@@ -2,8 +2,6 @@
 
 namespace App\Entities;
 
-use App\Entities\Availability;
-
 class Hotel extends Entity
 {
     /** @var  string $name */

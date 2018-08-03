@@ -4,7 +4,7 @@ namespace App\Entities;
 
 use Carbon\Carbon;
 
-class availability
+class Availability
 {
     /** @var Carbon $from */
     private $from;

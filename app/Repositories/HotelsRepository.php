@@ -3,7 +3,10 @@
 namespace App\Repositories;
 
 use App\Entities\Hotel;
+use App\Hydrators\HotelsHydrator;
 use App\Repositories\ApiRestClient\HotelsRestClient;
+use App\Hydrators\HotelsTransformer;
+use App\Hydrators\Hydrator;
 
 class HotelsRepository extends ProviderRepository
 {
@@ -16,13 +19,14 @@ class HotelsRepository extends ProviderRepository
     }
 
     /**
-     * @param Hotel[] $entities
+     * @param Hotel[] $hotels
      * @param array $filter
      * @return Hotel[]
      */
-    public function search(array $entities, array $filter): array
+    public function search(array $hotels, array $filter): array
     {
-        // TODO: Implement search() method.
+
+        return $hotels;
     }
 
     /**
@@ -30,17 +34,19 @@ class HotelsRepository extends ProviderRepository
      */
     public function getAll(): array
     {
-       $hotelsJson =  $this->restClient->getData();
+        $hotels = $this->restClient->getData();
+        return HotelsHydrator::hydrate($hotels);
     }
 
     /**
-     * @param Hotel[] $entities
+     * @param Hotel[] $hotels
      * @param string $key
      * @return Hotel[]
      */
-    function sort(array $entities , string $key) : array
+    function sort(array $hotels , string $key) : array
     {
-        // TODO: Implement sort() method.
+
+        return $hotels;
 
     }
 

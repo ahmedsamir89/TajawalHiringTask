@@ -7,7 +7,7 @@ use App\Repositories\HotelsRepository;
 
 class HotelsService extends ProviderService
 {
-    /** @var HotelsService $hotelsRepository  */
+    /** @var HotelsRepository $hotelsRepository  */
     private $hotelsRepository;
 
     /**
@@ -21,12 +21,17 @@ class HotelsService extends ProviderService
 
     /**
      * @param array $filter
-     * @param string $sort_by
-     * @param bool $ascending
      * @return Hotel[]
      */
-    public function search(array $filter , $sort_by='name' , $ascending = true) : array
+    public function search(array $filter) : array
     {
+        $hotels = $this->hotelsRepository->getAll();
+
+        $hotels = $this->hotelsRepository->search($hotels , $filter);
+
+        $hotels = $this->hotelsRepository->sort($hotels , 'name');
+
+        return $hotels;
 
     }
 
