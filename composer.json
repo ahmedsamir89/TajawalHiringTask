@@ -1,7 +1,7 @@
 {
-    "name": "laravel/lumen",
-    "description": "The Laravel Lumen Framework.",
-    "keywords": ["framework", "laravel", "lumen"],
+    "name": "huzien/tajawal_task",
+    "description": "task for Tajawal hiring process",
+    "keywords": ["framework", "laravel", "lumen", "tajawal"],
     "license": "MIT",
     "type": "project",
     "require": {
