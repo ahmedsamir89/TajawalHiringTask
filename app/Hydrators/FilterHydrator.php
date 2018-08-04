@@ -17,7 +17,7 @@ class FilterHydrator implements Hydrator
 
     /**
      * @param array $data
-     * @return Filter[]
+     * @return FilterWrapper[]
      * @throws APIQueryParameterException
      */
     public static function hydrate(array $data): array
