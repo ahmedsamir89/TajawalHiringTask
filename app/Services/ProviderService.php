@@ -3,13 +3,14 @@
 namespace App\Services;
 
 use App\Entities\Entity;
+use App\Entities\Filters\FilterWrapper;
 
 abstract class ProviderService
 {
     /**
-     * @param array $filter
+     * @param FilterWrapper $filter
      * @return Entity[]
      */
-    abstract public function search(array $filter) : array ;
+    abstract public function search(FilterWrapper $filter) : array ;
 
 }

@@ -52,4 +52,17 @@ class ApiController extends Controller
         }
     }
 
+    /**
+     * @param $errors
+     * @return JsonResponse
+     */
+    public function respodInternalServerError($errors) : JsonResponse
+    {
+        if (is_array($errors)) {
+            return $this->setStatus(500)->respond($errors);
+        } else {
+            return $this->setStatus(500)->respond($errors->toArray());
+        }
+    }
+
 }

@@ -4,6 +4,7 @@ namespace App\Repositories;
 
 
 use App\Entities\Entity;
+use App\Entities\Filters\Filter;
 
 abstract class ProviderRepository
 {
@@ -21,8 +22,8 @@ abstract class ProviderRepository
 
     /**
      * @param Entity[] $entities
-     * @param string $key
+     * @param Filter $filter
      * @return Entity[]
      */
-    abstract function sort(array $entities , string $key) : array ;
+    abstract function sort(array $entities , Filter $filter) : array ;
 }

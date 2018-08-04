@@ -2,7 +2,9 @@
 
 namespace App\Services;
 
+use App\Entities\Filters\FilterWrapper;
 use App\Entities\Hotel;
+use App\Hydrators\FilterHydrator;
 use App\Repositories\HotelsRepository;
 
 class HotelsService extends ProviderService
@@ -20,16 +22,16 @@ class HotelsService extends ProviderService
     }
 
     /**
-     * @param array $filter
+     * @param FilterWrapper $filter
      * @return Hotel[]
      */
-    public function search(array $filter) : array
+    public function search(FilterWrapper $filterWrapper) : array
     {
         $hotels = $this->hotelsRepository->getAll();
 
-        $hotels = $this->hotelsRepository->search($hotels , $filter);
+        $hotels = $this->hotelsRepository->search($hotels , $filterWrapper->getFilters());
 
-        $hotels = $this->hotelsRepository->sort($hotels , 'name');
+        $hotels = $this->hotelsRepository->sort($hotels , $filterWrapper->getSortBy());
 
         return $hotels;
 
