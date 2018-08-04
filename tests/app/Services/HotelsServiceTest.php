@@ -2,6 +2,9 @@
 
 namespace Tests\app\Services;
 
+use App\Entities\Filters\FilterWrapper;
+use App\Entities\Filters\NameFilter;
+use App\Entities\Filters\PriceFilter;
 use App\Entities\Hotel;
 use App\Repositories\HotelsRepository;
 use App\Services\HotelsService;
@@ -25,10 +28,12 @@ class HotelsServiceTest extends TestCase
 
     public function testSearchForHotelsBySomeFilters()
     {
-
-        $hotels = $this->hotelsService->search([]);
-
+        $filterWrapper = new FilterWrapper();
+        $filterWrapper->addFilter(new NameFilter());
+        $filterWrapper->setSortBy(new PriceFilter());
+        $hotels = $this->hotelsService->search($filterWrapper);
         $this->assertEmpty($hotels);
+
     }
 
 }
