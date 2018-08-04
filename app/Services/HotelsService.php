@@ -4,7 +4,6 @@ namespace App\Services;
 
 use App\Entities\Filters\FilterWrapper;
 use App\Entities\Hotel;
-use App\Hydrators\FilterHydrator;
 use App\Repositories\HotelsRepository;
 
 class HotelsService extends ProviderService
@@ -22,7 +21,7 @@ class HotelsService extends ProviderService
     }
 
     /**
-     * @param FilterWrapper $filter
+     * @param FilterWrapper $filterWrapper
      * @return Hotel[]
      */
     public function search(FilterWrapper $filterWrapper) : array
