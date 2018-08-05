@@ -19,5 +19,5 @@ services:
     source_base:
         image: nginx:stable
         volumes:
-            - ../:/var/www/html
+            - .:/var/www/html
         command: "true"
