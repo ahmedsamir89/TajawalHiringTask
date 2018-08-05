@@ -1,6 +1,6 @@
 FROM php:7.1-fpm
 
-RUN apt-get update && apt-get install -y libmcrypt-dev \
+RUN apt-get update && apt-get install -y libmcrypt-dev unzip \
     sqlite3 libsqlite3-dev libmagickwand-dev \
     && docker-php-ext-install mcrypt
 
