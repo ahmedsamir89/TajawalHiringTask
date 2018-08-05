@@ -33,9 +33,9 @@ class FilterWrapper
     }
 
     /**
-     * @return SortFilter
+     * @return SortFilter | null
      */
-    public function getSortBy(): SortFilter
+    public function getSortBy(): ?SortFilter
     {
         return $this->sortBy;
     }

@@ -30,7 +30,9 @@ class HotelsService extends ProviderService
 
         $hotels = $this->hotelsRepository->search($hotels , $filterWrapper->getFilters());
 
-        $hotels = $this->hotelsRepository->sort($hotels , $filterWrapper->getSortBy());
+        if($filterWrapper->getSortBy()) {
+            $hotels = $this->hotelsRepository->sort($hotels, $filterWrapper->getSortBy());
+        }
 
         return $hotels;
 
