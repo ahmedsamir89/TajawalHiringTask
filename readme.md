@@ -1,4 +1,4 @@
-
+[![Build Status](https://travis-ci.org/MohamedHuzien/TajawalHiringTask.svg?branch=master)](https://travis-ci.org/MohamedHuzien/TajawalHiringTask) [![Maintainability](https://api.codeclimate.com/v1/badges/e102659765082af5213e/maintainability)](https://codeclimate.com/github/MohamedHuzien/TajawalHiringTask/maintainability) 
 Tajawal Hiring Process Task
 ----------
 
