@@ -1,0 +1,23 @@
+version: '2'
+services:
+    php-fpm:
+        build: ./images/php-fpm/
+        volumes_from:
+            - source_base
+    nginx:
+        build: ./images/nginx/
+        volumes_from:
+            - source_base
+        volumes:
+          - ./images/nginx/config/vhost.conf:/etc/nginx/conf.d/vhost.conf
+        links:
+            - php-fpm
+        ports:
+            - 8081:81
+            - 9091:9090
+
+    source_base:
+        image: nginx:stable
+        volumes:
+            - ../:/var/www/html
+        command: "true"
