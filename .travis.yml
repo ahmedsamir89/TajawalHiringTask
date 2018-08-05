@@ -23,4 +23,4 @@ script:
 
 env:
   global:
-    - CC_TEST_REPORTER_ID=
+    - CC_TEST_REPORTER_ID=0d582960fd679c13b185143381a4b908387d17fddf4509e2dedc3e3708a65c31
